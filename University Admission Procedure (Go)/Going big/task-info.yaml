@@ -1,0 +1,82 @@
+type: remote_edu
+files:
+- name: uap.go
+  visible: true
+  text: "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar score1, score2,\
+    \ score3 int\n\tfmt.Scan(&score1)\n\tfmt.Scan(&score2)\n\tfmt.Scan(&score3)\n\n\
+    \tmeanScore := float64(score1+score2+score3) / 3.0\n\tfmt.Println(meanScore)\n\
+    \n\tif meanScore >= 60.0 {\n\t\tfmt.Println(\"Congratulations, you are accepted!\"\
+    )\n\t} else {\n\t\tfmt.Println(\"We regret to inform you that we will not be able\
+    \ to offer you admission.\")\n\t}\n}\n"
+  learner_created: false
+- name: tests.py
+  visible: false
+  text: |
+    from hstest import StageTest, CheckResult, WrongAnswer, TestCase
+
+    input_1 = ["5", "3", "Cole Collins 3.68", "Dolores Baldwin 3.40", "Brett Boyer 2.45",
+               "Nora Alston 3.71", "Jessy Moore 3.14"]
+    input_2 = ["5", "3",
+               "Albert Collins 3.02", "Albert Nelson 3.02", "Cole Allen 3.02", "Sameera Procter-Baines 3.18",
+               "Divina Butterworth 3.27"]
+    input_3 = ["10", "5",
+               "Chuck Norris 3.55", "Artavious Fay 3.05", "Sameera Procter-Baines 3.18",
+               "Blia Sagar 3.44", "Divina Butterworth 3.27", "Marygrace Wheelton 3.58",
+               "Dashanna Herron 3.12", "Derick Whatley 3.61", "Jamarl Delap 3.11",
+               "Kaylie Lanthis 3.22"]
+    input_4 = ["2", "1", "Tisheena Mckenney 3.18", "Jeff Bezos 3.99"]
+
+
+    class TestAdmissionProcedure(StageTest):
+        def generate(self):
+            return [
+                TestCase(stdin=input_1, attach=input_1),
+                TestCase(stdin=input_2, attach=input_2),
+                TestCase(stdin=input_3, attach=input_3),
+                TestCase(stdin=input_4, attach=input_4)
+            ]
+
+        @staticmethod
+        def get_successful_applicants(applicants_list, m):
+            applicants = []
+            for applicant in applicants_list:
+                name, surname, gpa = applicant.split(' ')
+                name = ' '.join([name, surname])
+                gpa = float(gpa)
+                applicants.append([name, gpa])
+
+            applicants = sorted(applicants, key=lambda x: (-x[1], x[0]))
+            for i in range(m):
+                yield applicants[i][0]
+
+        def check(self, reply: str, attach: list):
+            n, m = int(attach[0]), int(attach[1])
+            applicants = attach[2:]
+            output = reply.strip().split('\n')
+            output = [line for line in output if line]
+            if len(output) != m + 1:
+                raise WrongAnswer("The output should contain {0} lines. \n"
+                                  "However, {1} lines were found in your output.".format(m + 1,
+                                                                                         len(output)))
+            if "successful applicants" not in output[0].lower():
+                raise WrongAnswer("The first line of your output should contain the line \"Successful applicants:\"")
+
+            applicants = self.get_successful_applicants(applicants, m)
+            for i, applicant in enumerate(applicants, start=1):
+                output_applicant = output[i].strip()
+                if applicant.lower().strip() != output_applicant.lower():
+                    raise WrongAnswer("Line {0} of your output is expected to only contain the "
+                                      "full name of the student: \"{1}\".\n"
+                                      "However, this line does not seem to satisfy this requirement:\n"
+                                      "{2}".format(i, applicant, output_applicant))
+
+            return CheckResult.correct()
+
+
+    if __name__ == '__main__':
+        TestAdmissionProcedure().run_tests()
+  learner_created: false
+feedback_link: https://hyperskill.org/projects/234/stages/1174/implement#comment
+check_profile: hyperskill_go
+status: Solved
+record: 2

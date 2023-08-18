@@ -1,0 +1,188 @@
+hyperskill_project:
+  id: 234
+  ide_files: https://cogniterra.org/media/attachments/lesson/26305/additional_files.json
+  is_template_based: false
+  use_ide: true
+update_date: "Thu, 01 Jan 1970 00:00:00 UTC"
+stages:
+- id: 1172
+  step: 21373
+  is_completed: true
+- id: 1173
+  step: 21374
+  is_completed: true
+- id: 1174
+  step: 21375
+  is_completed: true
+- id: 1175
+  step: 21376
+  is_completed: false
+- id: 1176
+  step: 21377
+  is_completed: false
+- id: 1177
+  step: 21378
+  is_completed: false
+- id: 1178
+  step: 21379
+  is_completed: true
+topics:
+  0:
+  - title: IDE
+    theory_id: 10996
+  - title: Introduction to Go
+    theory_id: 17073
+  - title: Comments
+    theory_id: 16689
+  - title: Variables and constants
+    theory_id: 14468
+  - title: Control statements
+    theory_id: 16235
+  - title: Loops
+    theory_id: 14707
+  - title: Primitive types
+    theory_id: 16871
+  - title: Computer programming
+    theory_id: 8739
+  - title: Paradigms
+    theory_id: 15860
+  - title: GoLand
+    theory_id: 19072
+  - title: Documentation
+    theory_id: 12069
+  - title: Input/Output
+    theory_id: 14527
+  1:
+  - title: Arithmetic operations
+    theory_id: 16679
+  - title: Arithmetic expressions in programming
+    theory_id: 17289
+  2:
+  - title: Binary numbers
+    theory_id: 5544
+  - title: Hexadecimal numbers
+    theory_id: 8788
+  - title: Computer algorithms
+    theory_id: 16547
+  - title: The big O notation
+    theory_id: 16699
+  - title: "Best, average and worst cases"
+    theory_id: 20084
+  - title: Data structures
+    theory_id: 16927
+  - title: Starting with GitHub
+    theory_id: 4802
+  - title: Units of information
+    theory_id: 6865
+  - title: World Wide Web
+    theory_id: 6633
+  - title: Pseudocode
+    theory_id: 15090
+  - title: Pseudocode basics
+    theory_id: 19510
+  - title: Complex constructions in pseudocode
+    theory_id: 20922
+  - title: Fixed-size array
+    theory_id: 20078
+  - title: Pointers
+    theory_id: 15463
+  - title: Packages
+    theory_id: 15906
+  - title: Structs
+    theory_id: 17490
+  - title: Functions
+    theory_id: 16388
+  - title: Anonymous functions and Closures
+    theory_id: 22032
+  - title: Introduction to OOP
+    theory_id: 3614
+  - title: Unicode
+    theory_id: 7899
+  - title: Arrays
+    theory_id: 14871
+  - title: Slices
+    theory_id: 15656
+  - title: Working with slices
+    theory_id: 15935
+  - title: Strings
+    theory_id: 15412
+  - title: String formatting
+    theory_id: 16860
+  - title: Operations with strings
+    theory_id: 18548
+  - title: Functions
+    theory_id: 13884
+  - title: Introduction to logging
+    theory_id: 5538
+  - title: Errors
+    theory_id: 16774
+  - title: Advanced Input
+    theory_id: 18567
+  - title: Parsing data from strings
+    theory_id: 17935
+  - title: Ordering and total order
+    theory_id: 9253
+  - title: Ordering of compound objects
+    theory_id: 9457
+  - title: Sorting slices
+    theory_id: 18617
+  3:
+  - title: Introduction to Operating systems
+    theory_id: 9704
+  - title: Stack
+    theory_id: 5252
+  - title: Files
+    theory_id: 13025
+  - title: File types
+    theory_id: 13017
+  - title: Defer statement
+    theory_id: 17694
+  - title: Functional decomposition
+    theory_id: 17506
+  - title: Modules
+    theory_id: 15970
+  - title: Main (compiling and running)
+    theory_id: 16128
+  - title: Debugging Go code
+    theory_id: 23076
+  - title: Libraries
+    theory_id: 8504
+  - title: What is a bug
+    theory_id: 5504
+  - title: Slice expressions
+    theory_id: 20411
+  - title: Design principles
+    theory_id: 8956
+  - title: "Hashing: overview"
+    theory_id: 9831
+  - title: Semantic versioning
+    theory_id: 19244
+  - title: Hash function
+    theory_id: 30143
+  - title: Hash table
+    theory_id: 13054
+  - title: Maps
+    theory_id: 16999
+  - title: Operations with maps
+    theory_id: 17206
+  - title: Debugging overview
+    theory_id: 14368
+  - title: Introduction to Linux
+    theory_id: 9526
+  - title: File modes and permissions
+    theory_id: 13953
+  - title: Working with files
+    theory_id: 16498
+  - title: Reading files
+    theory_id: 16702
+  - title: Compilers and interpreters
+    theory_id: 13865
+  4:
+  - title: Methods
+    theory_id: 17739
+  5:
+  - title: Writing data to files
+    theory_id: 17627
+  6:
+  - title: Math package
+    theory_id: 18431

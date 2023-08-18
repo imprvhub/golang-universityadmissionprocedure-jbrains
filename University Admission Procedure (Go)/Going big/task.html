@@ -1,0 +1,53 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Things are heating up! Our university has become trendy, so the applicants are rushing in. Your program has to be adapted to this — unfortunately, we cannot enroll everybody. The program will need to rank the potential students and determine who's going to get admitted. At this stage, you'll need to work with the Grade Point Average (GPA). It is the mean grade of all high school courses. We don't need the threshold, for now, a certain number of applicants with the best GPA will be accepted instead.</p>
+<h5 id="theory">Theory</h5>
+<p>To proceed further we need to understand the basics of sorting. To use more than one attribute for sorting, use the following syntax:</p>
+<pre><code class="language-go">type Pair struct { first, second int }
+
+pairs := []Pair{{3, 5}, {3, 4}, {1, 2}}
+sort.Slice(pairs, func(i, j int) bool {
+	if pairs[i].first != pairs[j].first {
+		return pairs[i].first &lt; pairs[j].first
+	}
+	return pairs[i].second &lt; pairs[j].second
+})
+
+fmt.Println(pairs) // [{1 2} {3 4} {3 5}]
+</code></pre>
+<p>In this example, the value <code class="language-go">first</code> of each element of the <code class="language-go">pairs</code> is used for sorting in the first place. If these values are equal, the value <code class="language-go">second</code> is used to determine which element is less.</p>
+<h5 id="objectives">Objectives</h5>
+<p>At this stage, your program should:</p>
+<ol>
+<li>Read the first input, an <strong>N</strong> integer representing the total number of applicants.</li>
+<li>Read the second input, an <strong>M</strong> integer representing the number of applicants that should be accepted to the university. </li>
+<li>Read <strong>N</strong> lines from the input. Each line contains the first name, the last name, and the applicant's GPA. These values are separated by one whitespace character. A GPA is a floating-point number with two decimals.</li>
+<li>Output the <code class="language-go">Successful applicants:</code> message.</li>
+<li>Output <strong>M</strong> lines for applicants with the top-ranking GPAs. Each line should contain the first and the last name of the applicant separated by a whitespace character. Successful applicants' names should be printed in descending order depending on the GPA — first, the applicant with the best GPA, then the second-best, and so on.</li>
+<li>If two applicants have the same GPA, rank them in alphabetical order using their full names (we know it's not really fair to choose students by their names, but what choice do we have?)</li>
+</ol>
+<h5 id="example">Example</h5>
+<p>The greater-than symbol followed by a space (<code class="language-go">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code class="language-no-highlight">&gt; 5
+&gt; 3
+&gt; Cole Collins 3.68
+&gt; Dolores Baldwin 3.40
+&gt; Brett Boyer 2.45
+&gt; Nora Alston 3.71
+&gt; Jessy Moore 3.14
+Successful applicants:
+Nora Alston
+Cole Collins
+Dolores Baldwin</code></pre>
+<p> <strong>Example 2:</strong> <em>applicants with equal GPA, note that the full name is used to sort these applicants</em></p>
+<pre><code class="language-no-highlight">&gt; 3
+&gt; 2
+&gt; Albert Collins 3.02
+&gt; Albert Nelson 3.02
+&gt; Cole Allen 3.02
+Successful applicants:
+Albert Collins
+Albert Nelson
+</code></pre>
+</div>
